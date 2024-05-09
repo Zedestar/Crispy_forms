@@ -1,0 +1,116 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block title %}
+    Your Details
+{% endblock title %}
+
+
+{% block content %}
+
+    <div class="m-3">
+        <div class="container">
+            {% for data in data %}
+              <div class="card m-3">
+                <div class="row">
+                    <div class="col-4">
+                        {{data.firstname}}
+                    </div>
+                    <div class="col-4">
+                        {{data.secondname}}
+                    </div>
+                    <div class="col-4">
+                        {{data.phone}}
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-4">
+                        {{data.email}}
+                    </div>
+                    <div class="col-4">
+                        {{data.job }}
+                    </div>
+                    <div class="col-4">
+                        {{data.age}}
+                    </div>
+                </div>
+    
+                <hr style="border: solid 1px rgb(8, 8, 97);">
+    
+                <div class="row">
+                    <div class="col-4">
+                        {{data.situation}}
+                    </div>
+                    <div class="col-4">
+                        {{data.personality }}
+                    </div>
+                    <div class="col-2">
+                        {{data.gender}}
+                    </div>
+                    <div class="col-2">
+                        {{data.smoker}}
+                    </div>
+                </div>
+    
+                <hr style="border: solid 1px rgb(25, 25, 136);">
+    
+                <div class="row">
+                    <div class="col-6">
+                        {{form.experience}}
+                    </div>
+                    <div class="col-6">
+                        {{data.salary}}
+                    </div>
+                </div>
+                
+    
+                
+    
+                <div class="row">
+                    <div class="col-12">
+                        {{data.messag}}
+                    </div>
+                </div>
+    
+                <hr style="border: solid 1px rgb(79, 79, 204);">
+    
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{data.file.url}}" alt="The image doesnot load correctly">
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="row m-3">
+                        <div class="col-12">
+                            <h3 class="text-center">Mark your skills here</h3>
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            {{form.language}}
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            {{data.libraries}}
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"class="col-2">
+                            {{data.databases}}
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"">
+                            {{data.mobile}}
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            {{data.frameworks}}
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            {{data.others}}
+                        </div>
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
